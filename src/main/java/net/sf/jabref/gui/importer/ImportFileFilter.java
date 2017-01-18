@@ -26,7 +26,8 @@ class ImportFileFilter extends FileFilter implements Comparable<ImportFileFilter
         this.description = description;
 
         List<FileExtensions> extensions = formats.stream().map(p -> p.getExtensions()).collect(Collectors.toList());
-        List<String> flatExtensions = extensions.stream().flatMap(extList -> Stream.of(extList.getExtensions())).collect(Collectors.toList());
+        //Workaround for regression bug in Eclipse neon.2 http://stackoverflow.com/questions/41571839/java-8-type-mismatch-cannot-convert-from-listserializable-to-liststring
+        List<String> flatExtensions = extensions.stream().flatMap(extList -> Arrays.stream(extList.getExtensions())).collect(Collectors.toList());
         fileFilter = new FileNameExtensionFilter(description, flatExtensions.toArray(new String[flatExtensions.size()]));
     }
 
