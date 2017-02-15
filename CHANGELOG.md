@@ -24,6 +24,9 @@ We refer to [GitHub issues](https://github.com/JabRef/jabref/issues) by using `#
     - All file dialogs now use the native file selector of the OS. [#1711](https://github.com/JabRef/jabref/issues/1711)
 - Switch to the [latex2unicode library](https://github.com/tomtung/latex2unicode) for converting LaTeX to unicode
 - The MS-Office XML export now exports the field `volumes` and `pubstate`.
+- We improved the UI customization possibilities:
+    - It is now possible to customize the colors and the size of the icons (implements a [feature request in the forum](http://discourse.jabref.org/t/menu-and-buttons-with-a-dark-theme/405))
+    - Resizing the menu and label sizes has been improved.
 
 ### Fixed
  - We fixed an issue where authors with multiple surnames were not presented correctly in the main table [#2534](https://github.com/JabRef/jabref/issues/2534)
